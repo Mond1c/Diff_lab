@@ -62,7 +62,7 @@ Output:
 """
 with open("README.md", "w") as file:
     file.write(start_output)
-    file.write("True parameters: " + str(true_parameters) + "\n")
-    file.write("Fitted Parameters with noise: " + str(params_with_noise) + "\n")
+    file.write("True parameters: " + str(true_parameters) + "\n\n")
+    file.write("Fitted Parameters with noise: " + str(params_with_noise) + "\n\n")
     file.write("Fitted Parameters without noise:" + str(params_without_noise) + "\n")
     
