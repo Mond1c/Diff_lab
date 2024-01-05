@@ -60,7 +60,7 @@ Output:
 
 ![output](/output1.png)
 """
-with open("README.md") as file:
+with open("README.md", "w") as file:
     file.write(start_output)
     file.write("True parameters: " + str(true_parameters) + "\n")
     file.write("Fitted Parameters with noise: " + str(params_with_noise) + "\n")
