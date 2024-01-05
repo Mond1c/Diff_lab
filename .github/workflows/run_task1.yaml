@@ -8,12 +8,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python
-    uses: actions/setup-python@v4
-    with:
-      python-version: '3.x'
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
     - name: Install dependencies
-    run: |
-      python -m pip install --upgrade pip
-      pip install -r requirements.txt
-    -name: Runnning
-    run: python task1.py
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Running  # Add a space before 'name'
+      run: python task1.py
