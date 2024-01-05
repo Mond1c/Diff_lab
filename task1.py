@@ -54,3 +54,15 @@ plt.ylabel('Значение')
 plt.legend()
 plt.show()
 plt.savefig('output1.png')
+start_output = """
+# Task 1
+Output:
+
+![output](/output1.png)
+"""
+with open("README.md") as file:
+    file.write(start_output)
+    file.write("True parameters: " + str(true_parameters) + "\n")
+    file.write("Fitted Parameters with noise: " + str(params_with_noise) + "\n")
+    file.write("Fitted Parameters without noise:" + str(params_without_noise) + "\n")
+    
