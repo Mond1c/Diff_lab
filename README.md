@@ -18,13 +18,3 @@ True parameters: [1.5, 10]
 Fitted Parameters with noise: [ 1.47665028 12.4631137 ]
 
 Fitted Parameters without noise:[ 1.5 10. ]
-
-# Test 3
-Output:
-
-![output](output3.png)
-True parameters: [3.2, 3]
-
-Fitted Parameters with noise: [1. 1.]
-
-Fitted Parameters without noise:[1. 1.]
