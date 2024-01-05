@@ -16,4 +16,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Running  # Add a space before 'name'
-      run: python task1.py
+      run: python *.py
+    
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: saved-files
+        path: *.png
