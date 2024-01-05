@@ -51,10 +51,10 @@ def generate(t_simulated, true_parameters, visible_points_count, output_png, tes
     plt.show()
     plt.savefig(output_png)
     start_output = """
-    # Task """ + str(testNum) + """
-    Output:
+# Task """ + str(testNum) + """
+Output:
 
-    ![output](""" + output_png
+![output](""" + output_png + ")\n"
     with open("README.md", "a") as file:
         file.write(start_output)
         file.write("True parameters: " + str(true_parameters) + "\n\n")
@@ -70,5 +70,5 @@ t_simulated = np.linspace(0, 10, 10)
 true_parameters = [1.5, 10]
 generate(t_simulated, true_parameters, visible_points_count, "output2.png", 2)
 t_simulated = np.linspace(0, 100, 10)
-true_parameters = [-2, 3]
+true_parameters = [3.2, 3]
 generate(t_simulated, true_parameters, visible_points_count, "output3.png", 3)
