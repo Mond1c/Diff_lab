@@ -51,7 +51,7 @@ def generate(t_simulated, true_parameters, visible_points_count, output_png, tes
     plt.show()
     plt.savefig(output_png)
     start_output = """
-# Task """ + str(testNum) + """
+# Test """ + str(testNum) + """
 Output:
 
 ![output](""" + output_png + ")\n"
