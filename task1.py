@@ -34,7 +34,7 @@ def generate(t_simulated, true_parameters, visible_points_count, output_png, tes
     print("True Parameters:", true_parameters)
     print("Fitted Parameters with noise:", params_with_noise)
     print("Fitted Parameters without noise:", params_without_noise)
-    t_more_points = np.linspace(0, 2, visible_points_count)
+    t_more_points = np.linspace(start_range, end_range, visible_points_count)
     y1 = odeint(differential_eqn, y0=1.0, t=t_more_points, args=tuple(params_with_noise)).flatten()
     noise = np.random.normal(0, y1 * 1.05 - y1, len(t_more_points))
     y1 += noise
