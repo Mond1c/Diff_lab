@@ -1,5 +1,5 @@
 
-# Task 1
+# Test 1
 Output:
 
 ![output](output1.png)
@@ -9,7 +9,7 @@ Fitted Parameters with noise: [3.1184547  1.62108157]
 
 Fitted Parameters without noise:[3.21 1.11]
 
-# Task 2
+# Test 2
 Output:
 
 ![output](output2.png)
@@ -19,7 +19,7 @@ Fitted Parameters with noise: [ 1.47665028 12.4631137 ]
 
 Fitted Parameters without noise:[ 1.5 10. ]
 
-# Task 3
+# Test 3
 Output:
 
 ![output](output3.png)
