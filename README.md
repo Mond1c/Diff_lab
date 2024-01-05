@@ -6,4 +6,4 @@
 # Task 1
 Output:
 
-![output](output.png)
+![output](/output1.png)
