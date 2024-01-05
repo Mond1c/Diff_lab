@@ -55,7 +55,7 @@ def generate(t_simulated, true_parameters, visible_points_count, output_png, tes
     Output:
 
     ![output](""" + output_png
-    with open("README.md", "wa") as file:
+    with open("README.md", "a") as file:
         file.write(start_output)
         file.write("True parameters: " + str(true_parameters) + "\n\n")
         file.write("Fitted Parameters with noise: " + str(params_with_noise) + "\n\n")
