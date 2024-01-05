@@ -3,7 +3,7 @@ name: Task 1
 on: [push]
 
 jobs:
-  build:
+  RunScripts:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
