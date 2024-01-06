@@ -5,7 +5,7 @@ Output:
 ![output](output1.png)
 True parameters: [3.21, 1.11]
 
-Fitted Parameters with noise: [3.1184547  1.62108157]
+Fitted Parameters with noise: [3.17371313 1.30905308]
 
 Fitted Parameters without noise:[3.21 1.11]
 
@@ -15,6 +15,6 @@ Output:
 ![output](output2.png)
 True parameters: [1.5, 10]
 
-Fitted Parameters with noise: [1.53874125 6.68542665]
+Fitted Parameters with noise: [1.51544847 8.54737649]
 
 Fitted Parameters without noise:[ 1.5 10. ]
