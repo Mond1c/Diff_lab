@@ -13,7 +13,7 @@ README_STANDARD = """
 
 Рассмотрим работу алгоритма на нескольких примерах. 
 
-Прежде чем переходить к рассмотрению данных с шумом, стоит заметить, что в силу специфики нелинейного метода наименьших квадратов на чистых данных (без добавления шума) для вычисления точных коэффициентов достаточно трёх точек, что можно увидеть на примере экспериментов 3, 6, 9
+Прежде чем переходить к рассмотрению данных с шумом, стоит заметить, что в силу специфики нелинейного метода наименьших квадратов на чистых данных (без добавления шума) для вычисления точных коэффициентов в большинстве случаев достаточно трёх точек, что можно увидеть на примере экспериментов 3, 6, 9
 
 Эксперименты 1,2 и 3 позволяют заметить, что с увеличением количества точек точность предскахания данных с шумом растёт, что полностью соответствует ожиданию, ведь большее количество данных позволяет сглаживать выбросы, порождаемые шумом, увеличивая точность предсказания.
 
@@ -80,26 +80,26 @@ Output:
 
 # Входные данные
 visible_points_count = 20
-t_simulated = np.linspace(0, 2, 3)
+t_simulated = np.linspace(0, 2, 3, endpoint=True)
 true_parameters = [-1.5, 10]
 generate(t_simulated, true_parameters, visible_points_count, "output1.png", 1, 0, 10)
-t_simulated = np.linspace(0, 10, 10)
+t_simulated = np.linspace(0, 10, 10, endpoint=True)
 generate(t_simulated, true_parameters, visible_points_count, "output2.png", 2, 0, 10)
-t_simulated = np.linspace(0, 10, 50)
+t_simulated = np.linspace(0, 10, 50, endpoint=True)
 generate(t_simulated, true_parameters, visible_points_count, "output3.png", 3, 0, 10)
 
-t_simulated = np.linspace(0, 2, 3)
+t_simulated = np.linspace(0, 2, 3, endpoint=True)
 true_parameters = [2.5, -1]
 generate(t_simulated, true_parameters, visible_points_count, "output4.png", 4, 0, 2)
-t_simulated = np.linspace(0, 2, 10)
+t_simulated = np.linspace(0, 2, 10, endpoint=True)
 generate(t_simulated, true_parameters, visible_points_count, "output5.png", 5, 0, 2)
-t_simulated = np.linspace(0, 2, 50)
+t_simulated = np.linspace(0, 2, 50, endpoint=True)
 generate(t_simulated, true_parameters, visible_points_count, "output6.png", 6, 0, 2)
 
-t_simulated = np.linspace(0, 2, 3)
+t_simulated = np.linspace(0, 2, 3, endpoint=True)
 true_parameters = [11.12, 100]
 generate(t_simulated, true_parameters, visible_points_count, "output7.png", 7, 0, 2)
-t_simulated = np.linspace(0, 2, 10)
+t_simulated = np.linspace(0, 2, 10, endpoint=True)
 generate(t_simulated, true_parameters, visible_points_count, "output8.png", 8, 0, 2)
-t_simulated = np.linspace(0, 2, 50)
+t_simulated = np.linspace(0, 2, 50, endpoint=True)
 generate(t_simulated, true_parameters, visible_points_count, "output9.png", 9, 0, 2)
