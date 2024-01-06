@@ -8,8 +8,18 @@ from scipy.integrate import odeint
 from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
 
+README_STANDARD = """
+# Анализ
+
+Рассмотрим работу алгоритма на нескольких примерах. 
+Прежде чем переходить к рассмотрению данных с шумом, стоит заметить, что в силу специфики нелинейного метода наименьших квадратов на чистых данных (без добавления шума) для вычисления точных коэффициентов достаточно трёх точек, что можно увидеть на примере экспериментов 3, 6, 9
+Эксперименты 1,2 и 3 позволяют заметить, что с увеличением количества точек точность предскахания данных с шумом растёт, что полностью соответствует ожиданию, ведь большее количество данных позволяет сглаживать выбросы, порождаемые шумом, увеличивая точность предсказания.
+Наиболее заметен вносимый шумом эффект в эксперименте 2. Из-за небольшого числа точек роль шума ожидаемо возрастает, серьёзно изменяя предсказываемые параметры.
+Также стоит отметить, что выводы, сделанные на основе наблюдений 1, 2 и 3 не имеют отношения к специфичности значений или знаков коэффициентов, в чём легко убедиться, рассмотрев рещультаты двух следующих серий экспериментов.
+\n\n"""
+
 with open("README.md", "w") as file:
-    file.write("")
+    file.write(README_STANDARD)
 
 def differential_eqn(y, t, a, b):
     dydt = a * y + b
@@ -34,7 +44,7 @@ def generate(t_simulated, true_parameters, visible_points_count, output_png, tes
     print("True Parameters:", true_parameters)
     print("Fitted Parameters with noise:", params_with_noise)
     print("Fitted Parameters without noise:", params_without_noise)
-    t_more_points = np.linspace(start_range, end_range, visible_points_count)
+    t_more_points = np.linspace(start_range, end_range, visible_points_count) + t_simulated
     t_more_points2 = np.linspace(start_range, end_range, 100)
     y1 = odeint(differential_eqn, y0=1.0, t=t_more_points, args=tuple(params_without_noise)).flatten()
     noise = np.random.normal(0, np.abs(y1 * 1.02 - y1), len(t_more_points))
@@ -80,3 +90,11 @@ t_simulated = np.linspace(0, 2, 10)
 generate(t_simulated, true_parameters, visible_points_count, "output5.png", 5, 0, 2)
 t_simulated = np.linspace(0, 2, 50)
 generate(t_simulated, true_parameters, visible_points_count, "output6.png", 6, 0, 2)
+
+t_simulated = np.linspace(0, 5, 3)
+true_parameters = [11.12, 100]
+generate(t_simulated, true_parameters, visible_points_count, "output7.png", 7, 0, 5)
+t_simulated = np.linspace(0, 5, 10)
+generate(t_simulated, true_parameters, visible_points_count, "output8.png", 8, 0, 5)
+t_simulated = np.linspace(0, 5, 50)
+generate(t_simulated, true_parameters, visible_points_count, "output9.png", 9, 0, 5)
