@@ -64,6 +64,7 @@ Output:
         file.write("Fitted Parameters without noise:" + str(params_without_noise) + "\n")
 
 # Входные данные
+visible_points_count = 20
 t_simulated = np.linspace(0, 2, 3)
 true_parameters = [-1.5, 10]
 generate(t_simulated, true_parameters, visible_points_count, "output1.png", 1, 0, 10)
