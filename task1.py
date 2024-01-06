@@ -64,13 +64,18 @@ Output:
         file.write("Fitted Parameters without noise:" + str(params_without_noise) + "\n")
 
 # Входные данные
-t_simulated = np.linspace(0, 2, 20)
-true_parameters = [-1.5, 10]  # Реальные параметры a и b
-visible_points_count = 20 # Количество точек, которое отрисовывается
-generate(t_simulated, true_parameters, visible_points_count, "output1.png", 1, 0, 2)
+t_simulated = np.linspace(0, 2, 3)
+true_parameters = [-1.5, 10]
+generate(t_simulated, true_parameters, visible_points_count, "output1.png", 1, 0, 10)
 t_simulated = np.linspace(0, 10, 10)
-true_parameters = [2.5, -10]
 generate(t_simulated, true_parameters, visible_points_count, "output2.png", 2, 0, 10)
-t_simulated = np.linspace(0, 10, 10)
-true_parameters = [11.12, 100]
+t_simulated = np.linspace(0, 10, 50)
 generate(t_simulated, true_parameters, visible_points_count, "output3.png", 3, 0, 10)
+
+t_simulated = np.linspace(0, 2, 3)
+true_parameters = [2.5, -1]
+generate(t_simulated, true_parameters, visible_points_count, "output4.png", 4, 0, 2)
+t_simulated = np.linspace(0, 2, 10)
+generate(t_simulated, true_parameters, visible_points_count, "output5.png", 5, 0, 2)
+t_simulated = np.linspace(0, 2, 50)
+generate(t_simulated, true_parameters, visible_points_count, "output6.png", 6, 0, 2)
