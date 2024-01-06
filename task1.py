@@ -24,7 +24,7 @@ def generate(t_simulated, true_parameters, visible_points_count, output_png, tes
     np.random.seed(42)
     y_simulated_solution = odeint(differential_eqn, y0=1.0, t=t_simulated, args=tuple(true_parameters)).flatten()
 
-    noise = np.random.normal(0, y_simulated_solution * 1.05 - y_simulated_solution, len(t_simulated))
+    noise = np.random.normal(0, y_simulated_solution * 1.02 - y_simulated_solution, len(t_simulated))
     y_simulated = y_simulated_solution + noise
 
     initial_guess = [1.0, 1.0]  # Начальное предположение для параметров
@@ -36,8 +36,6 @@ def generate(t_simulated, true_parameters, visible_points_count, output_png, tes
     print("Fitted Parameters without noise:", params_without_noise)
     t_more_points = np.linspace(start_range, end_range, visible_points_count)
     y1 = odeint(differential_eqn, y0=1.0, t=t_more_points, args=tuple(params_with_noise)).flatten()
-    noise = np.random.normal(0, y1 * 1.02 - y1, len(t_more_points))
-    y1 += noise
     y2 = odeint(differential_eqn, y0=1.0, t=t_more_points, args=tuple(params_without_noise)).flatten()
     y_true = odeint(differential_eqn, y0=1.0, t=t_more_points, args=tuple(true_parameters)).flatten()
 
