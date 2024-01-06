@@ -19,9 +19,9 @@ def fit_differential_eqn(t, a, b):
     y_fit = odeint(differential_eqn, y0=1.0, t=t, args=(a, b))
     return y_fit.flatten()
 
-np.random.seed(42)
 
 def generate(t_simulated, true_parameters, visible_points_count, output_png, testNum, start_range, end_range):
+    np.random.seed(42)
     y_simulated_solution = odeint(differential_eqn, y0=1.0, t=t_simulated, args=tuple(true_parameters)).flatten()
 
     noise = np.random.normal(0, y_simulated_solution * 1.05 - y_simulated_solution, len(t_simulated))
