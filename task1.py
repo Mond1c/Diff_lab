@@ -92,10 +92,10 @@ generate(t_simulated, true_parameters, visible_points_count, "output5.png", 5, 0
 t_simulated = np.linspace(0, 2, 50)
 generate(t_simulated, true_parameters, visible_points_count, "output6.png", 6, 0, 2)
 
-t_simulated = np.linspace(0, 5, 3)
+t_simulated = np.linspace(0, 2, 3)
 true_parameters = [11.12, 100]
-generate(t_simulated, true_parameters, visible_points_count, "output7.png", 7, 0, 5)
-t_simulated = np.linspace(0, 5, 10)
-generate(t_simulated, true_parameters, visible_points_count, "output8.png", 8, 0, 5)
-t_simulated = np.linspace(0, 5, 50)
-generate(t_simulated, true_parameters, visible_points_count, "output9.png", 9, 0, 5)
+generate(t_simulated, true_parameters, visible_points_count, "output7.png", 7, 0, 2)
+t_simulated = np.linspace(0, 2, 10)
+generate(t_simulated, true_parameters, visible_points_count, "output8.png", 8, 0, 2)
+t_simulated = np.linspace(0, 2, 50)
+generate(t_simulated, true_parameters, visible_points_count, "output9.png", 9, 0, 2)
