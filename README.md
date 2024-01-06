@@ -29,7 +29,7 @@ Output:
 ![output](output2.png)
 True parameters: [-1.5, 10]
 
-Fitted Parameters with noise: [-1.4634539   9.85688725]
+Fitted Parameters with noise: [-1.46345385  9.85688693]
 
 Fitted Parameters without noise:[-1.5 10. ]
 
@@ -59,7 +59,7 @@ Output:
 ![output](output5.png)
 True parameters: [2.5, -1]
 
-Fitted Parameters with noise: [ 2.50747361 -1.01369438]
+Fitted Parameters with noise: [ 2.50747358 -1.01369429]
 
 Fitted Parameters without noise:[ 2.5 -1. ]
 
@@ -69,7 +69,7 @@ Output:
 ![output](output6.png)
 True parameters: [2.5, -1]
 
-Fitted Parameters with noise: [ 2.48794889 -0.97420738]
+Fitted Parameters with noise: [ 2.48794885 -0.97420723]
 
 Fitted Parameters without noise:[ 2.5 -1. ]
 
@@ -77,28 +77,28 @@ Fitted Parameters without noise:[ 2.5 -1. ]
 Output:
 
 ![output](output7.png)
-True parameters: [11.12, 100]
+True parameters: [5.12, 100]
 
-Fitted Parameters with noise: [8.81192161e+00 9.00937408e+03]
+Fitted Parameters with noise: [ 5.13573328 98.36448288]
 
-Fitted Parameters without noise:[8.81159778e+00 8.89948827e+03]
+Fitted Parameters without noise:[  5.12 100.  ]
 
 # Test 8
 Output:
 
 ![output](output8.png)
-True parameters: [11.12, 100]
+True parameters: [5.12, 100]
 
-Fitted Parameters with noise: [11.20820053 83.69910032]
+Fitted Parameters with noise: [ 5.1740009  91.17320456]
 
-Fitted Parameters without noise:[ 11.12 100.  ]
+Fitted Parameters without noise:[  5.12 100.  ]
 
 # Test 9
 Output:
 
 ![output](output9.png)
-True parameters: [11.12, 100]
+True parameters: [5.12, 100]
 
-Fitted Parameters with noise: [ 10.80327047 187.15399477]
+Fitted Parameters with noise: [  5.06069761 110.13839553]
 
-Fitted Parameters without noise:[ 11.12 100.  ]
+Fitted Parameters without noise:[  5.12 100.  ]
