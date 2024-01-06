@@ -24,7 +24,7 @@ def generate(t_simulated, true_parameters, visible_points_count, output_png, tes
     np.random.seed(42)
     y_simulated_solution = odeint(differential_eqn, y0=1.0, t=t_simulated, args=tuple(true_parameters)).flatten()
 
-    noise = np.random.normal(0, y_simulated_solution * 1.01 - y_simulated_solution, len(t_simulated))
+    noise = np.random.normal(0, y_simulated_solution * 1.03 - y_simulated_solution, len(t_simulated))
     y_simulated = y_simulated_solution + noise
 
     initial_guess = [1.0, 1.0]  # Начальное предположение для параметров
