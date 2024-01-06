@@ -44,16 +44,17 @@ def generate(t_simulated, true_parameters, visible_points_count, output_png, tes
     print("True Parameters:", true_parameters)
     print("Fitted Parameters with noise:", params_with_noise)
     print("Fitted Parameters without noise:", params_without_noise)
-    t_more_points = np.concatenate((np.linspace(start_range, end_range, visible_points_count), t_simulated), axis=None)
+    t_more_points = np.linspace(start_range, end_range, visible_points_count)
     t_more_points2 = np.linspace(start_range, end_range, 100)
     y1 = odeint(differential_eqn, y0=1.0, t=t_more_points, args=tuple(params_without_noise)).flatten()
     noise = np.random.normal(0, np.abs(y1 * 1.02 - y1), len(t_more_points))
     y1 += noise
     y2 = odeint(differential_eqn, y0=1.0, t=t_more_points2, args=tuple(params_without_noise)).flatten()
     y_true = odeint(differential_eqn, y0=1.0, t=t_more_points2, args=tuple(true_parameters)).flatten()
-
+    
     plt.figure(figsize=(8, 6))
     plt.scatter(t_more_points, y1, label='Симулированные данные с шумом')
+    plt.scatter(t_simulated, y_simulated)
     plt.plot(t_more_points2, y2, label='Симулированные данные без шума ', color='red')
     plt.plot(t_more_points2, y_true, label='Истинные данные', color="green")
     plt.plot(t_more_points2, fit_differential_eqn(t_more_points2, *params_with_noise), label='Аппроксимированная кривая', color="yellow")
