@@ -39,12 +39,13 @@ def generate(t_simulated, true_parameters, visible_points_count, output_png, tes
     noise = np.random.normal(0, y1 * 1.05 - y1, len(t_more_points))
     y1 += noise
     y2 = odeint(differential_eqn, y0=1.0, t=t_more_points, args=tuple(params_without_noise)).flatten()
+    y_true = odeint(differential_eqn, y0=1.0, t=t_more_points, args=tuple(true_parameters)).flatten()
 
     plt.figure(figsize=(8, 6))
     plt.scatter(t_more_points, y1, label='Симулированные данные с шумом')
     plt.plot(t_more_points, y2, label='Симулированные данные без шума ', color='red')
-    plt.plot(t_simulated, y_simulated_solution, label='Истинные данные')
-    plt.plot(t_simulated, fit_differential_eqn(t_simulated, *params_with_noise), label='Аппроксимированная кривая')
+    plt.plot(t_more_points, y_true, label='Истинные данные', color="green")
+    plt.plot(t_more_points, fit_differential_eqn(t_more_points, *params_with_noise), label='Аппроксимированная кривая', color="yellow")
     plt.xlabel('Время')
     plt.ylabel('Значение')
     plt.legend()
