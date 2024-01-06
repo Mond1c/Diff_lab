@@ -35,17 +35,18 @@ def generate(t_simulated, true_parameters, visible_points_count, output_png, tes
     print("Fitted Parameters with noise:", params_with_noise)
     print("Fitted Parameters without noise:", params_without_noise)
     t_more_points = np.linspace(start_range, end_range, visible_points_count)
+    t_more_points2 = np.linspace(start_range, end_range, 100)
     y1 = odeint(differential_eqn, y0=1.0, t=t_more_points, args=tuple(params_without_noise)).flatten()
     noise = np.random.normal(0, y1 * 1.02 - y1, len(t_more_points))
     y1 += noise
-    y2 = odeint(differential_eqn, y0=1.0, t=t_more_points, args=tuple(params_without_noise)).flatten()
-    y_true = odeint(differential_eqn, y0=1.0, t=t_more_points, args=tuple(true_parameters)).flatten()
+    y2 = odeint(differential_eqn, y0=1.0, t=t_more_points2, args=tuple(params_without_noise)).flatten()
+    y_true = odeint(differential_eqn, y0=1.0, t=t_more_points2, args=tuple(true_parameters)).flatten()
 
     plt.figure(figsize=(8, 6))
     plt.scatter(t_more_points, y1, label='Симулированные данные с шумом')
-    plt.plot(t_more_points, y2, label='Симулированные данные без шума ', color='red')
-    plt.plot(t_more_points, y_true, label='Истинные данные', color="green")
-    plt.plot(t_more_points, fit_differential_eqn(t_more_points, *params_with_noise), label='Аппроксимированная кривая', color="yellow")
+    plt.plot(t_more_points2, y2, label='Симулированные данные без шума ', color='red')
+    plt.plot(t_more_points2, y_true, label='Истинные данные', color="green")
+    plt.plot(t_more_points2, fit_differential_eqn(t_more_points2, *params_with_noise), label='Аппроксимированная кривая', color="yellow")
     plt.xlabel('Время')
     plt.ylabel('Значение')
     plt.legend()
@@ -64,9 +65,12 @@ Output:
 
 # Входные данные
 t_simulated = np.linspace(0, 2, 20)
-true_parameters = [3.21, 1.11]  # Реальные параметры a и b
-visible_points_count = 100 # Количество точек, которое отрисовывается
+true_parameters = [-1.5, 10]  # Реальные параметры a и b
+visible_points_count = 20 # Количество точек, которое отрисовывается
 generate(t_simulated, true_parameters, visible_points_count, "output1.png", 1, 0, 2)
 t_simulated = np.linspace(0, 10, 10)
-true_parameters = [1.5, 10]
+true_parameters = [2.5, -10]
 generate(t_simulated, true_parameters, visible_points_count, "output2.png", 2, 0, 10)
+t_simulated = np.linspace(0, 10, 10)
+true_parameters = [11.12, 100]
+generate(t_simulated, true_parameters, visible_points_count, "output3.png", 3, 0, 10)
