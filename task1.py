@@ -41,7 +41,7 @@ def generate(t_simulated, true_parameters, visible_points_count, output_png, tes
     noise = np.random.normal(0, np.abs(y_simulated_solution * 1.02 - y_simulated_solution), len(t_simulated))
     y_simulated = y_simulated_solution + noise
 
-    initial_guess = [true_parameters[0] * 0.3, true_parameters[1] * 0.3]  # Начальное предположение для параметров
+    initial_guess = [1.0, 1.0]  # Начальное предположение для параметров
     # нелинейный метод наименьших квадратов
     params_with_noise, covariance = curve_fit(fit_differential_eqn, t_simulated, y_simulated, p0=initial_guess)
     params_without_noise, covariance2 = curve_fit(fit_differential_eqn, t_simulated, y_simulated_solution, p0=initial_guess)
@@ -97,7 +97,7 @@ t_simulated = np.linspace(0, 2, 50, endpoint=True)
 generate(t_simulated, true_parameters, visible_points_count, "output6.png", 6, 0, 2)
 
 t_simulated = np.linspace(0, 2, 3, endpoint=True)
-true_parameters = [11.12, 100]
+true_parameters = [5.12, 100]
 generate(t_simulated, true_parameters, visible_points_count, "output7.png", 7, 0, 2)
 t_simulated = np.linspace(0, 2, 10, endpoint=True)
 generate(t_simulated, true_parameters, visible_points_count, "output8.png", 8, 0, 2)
