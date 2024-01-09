@@ -23,7 +23,7 @@ Fitted Parameters with noise: [-1.40183227  9.56029283]
 
 Fitted Parameters without noise:[-1.5 10. ]
 
-R squared: [-9.69762852  0.03874217]
+R squared: [0.99845203 0.99840538]
 
 # Test 2
 Output:
@@ -35,7 +35,7 @@ Fitted Parameters with noise: [-1.46345385  9.85688693]
 
 Fitted Parameters without noise:[-1.5 10. ]
 
-R squared: [-10.23486141   0.01286733]
+R squared: [0.99983451 0.99983297]
 
 # Test 3
 Output:
@@ -47,7 +47,7 @@ Fitted Parameters with noise: [-1.56607609 10.35830923]
 
 Fitted Parameters without noise:[-1.5 10. ]
 
-R squared: [-11.20273126  -0.03321296]
+R squared: [0.99900196 0.999027  ]
 
 # Test 4
 Output:
@@ -59,7 +59,7 @@ Fitted Parameters with noise: [ 2.51751566 -1.04024345]
 
 Fitted Parameters without noise:[ 2.5 -1. ]
 
-R squared: [ 4.57255126 -0.00995575]
+R squared: [0.99984353 0.99984455]
 
 # Test 5
 Output:
@@ -71,7 +71,7 @@ Fitted Parameters with noise: [ 2.50747358 -1.01369429]
 
 Fitted Parameters without noise:[ 2.5 -1. ]
 
-R squared: [ 4.52374765e+00 -3.36543197e-03]
+R squared: [0.99998017 0.99998021]
 
 # Test 6
 Output:
@@ -83,7 +83,7 @@ Fitted Parameters with noise: [ 2.48794885 -0.97420723]
 
 Fitted Parameters without noise:[ 2.5 -1. ]
 
-R squared: [4.45477817 0.00627432]
+R squared: [0.99993361 0.99993335]
 
 # Test 7
 Output:
@@ -95,7 +95,7 @@ Fitted Parameters with noise: [ 5.13573328 98.36448288]
 
 Fitted Parameters without noise:[  5.12 100.  ]
 
-R squared: [-9.06728919e+01  1.71005398e-02]
+R squared: [0.99970278 0.99969767]
 
 # Test 8
 Output:
@@ -107,7 +107,7 @@ Fitted Parameters with noise: [ 5.1740009  91.17320456]
 
 Fitted Parameters without noise:[  5.12 100.  ]
 
-R squared: [-77.89058706   0.08616265]
+R squared: [0.99133995 0.99050241]
 
 # Test 9
 Output:
@@ -119,4 +119,4 @@ Fitted Parameters with noise: [  5.06069761 110.13839553]
 
 Fitted Parameters without noise:[  5.12 100.  ]
 
-R squared: [-1.16285726e+02 -1.14862655e-01]
+R squared: [0.98858877 0.98973689]
