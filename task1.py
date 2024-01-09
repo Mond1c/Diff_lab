@@ -29,7 +29,7 @@ with open("README.md", "w") as file:
 
 def r_squared(true_parameters, predict_parameters):
     y_mean = 0.5 * (true_parameters + predict_parameters)
-    return 1 - ((true_parameters[0] - predict_parameters[1]) ** 2 + (true_parameters[1] - predict_parameters[1]) ** 2) / ((true_parameters[0] - y_mean) ** 2 + (true_parameters[1] - y_mean))
+    return 1 - ((true_parameters[0] - predict_parameters[0]) ** 2 + (true_parameters[1] - predict_parameters[1]) ** 2) / ((true_parameters[0] - y_mean) ** 2 + (true_parameters[1] - y_mean) ** 2)
 
 
 def differential_eqn(y, t, a, b):
