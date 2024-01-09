@@ -23,7 +23,7 @@ Fitted Parameters with noise: [-1.40183227  9.56029283]
 
 Fitted Parameters without noise:[-1.5 10. ]
 
-Logloss: nan
+Deviation: 0.31857439888691474
 
 # Test 2
 Output:
@@ -35,7 +35,7 @@ Fitted Parameters with noise: [-1.46345385  9.85688693]
 
 Fitted Parameters without noise:[-1.5 10. ]
 
-Logloss: nan
+Deviation: 0.10444369931195938
 
 # Test 3
 Output:
@@ -47,7 +47,7 @@ Fitted Parameters with noise: [-1.56607609 10.35830923]
 
 Fitted Parameters without noise:[-1.5 10. ]
 
-Logloss: nan
+Deviation: 0.25763497011848
 
 # Test 4
 Output:
@@ -59,7 +59,7 @@ Fitted Parameters with noise: [ 2.51751566 -1.04024345]
 
 Fitted Parameters without noise:[ 2.5 -1. ]
 
-Logloss: nan
+Deviation: 0.03103492565656168
 
 # Test 5
 Output:
@@ -71,7 +71,7 @@ Fitted Parameters with noise: [ 2.50747358 -1.01369429]
 
 Fitted Parameters without noise:[ 2.5 -1. ]
 
-Logloss: nan
+Deviation: 0.01103149966347733
 
 # Test 6
 Output:
@@ -83,7 +83,7 @@ Fitted Parameters with noise: [ 2.48794885 -0.97420723]
 
 Fitted Parameters without noise:[ 2.5 -1. ]
 
-Logloss: nan
+Deviation: 0.020130790495962798
 
 # Test 7
 Output:
@@ -95,7 +95,7 @@ Fitted Parameters with noise: [ 5.13573328 98.36448288]
 
 Fitted Parameters without noise:[  5.12 100.  ]
 
-Logloss: nan
+Deviation: 1.1565387572832815
 
 # Test 8
 Output:
@@ -107,7 +107,7 @@ Fitted Parameters with noise: [ 5.1740009  91.17320456]
 
 Fitted Parameters without noise:[  5.12 100.  ]
 
-Logloss: nan
+Deviation: 6.24160371645338
 
 # Test 9
 Output:
@@ -119,4 +119,4 @@ Fitted Parameters with noise: [  5.06069761 110.13839553]
 
 Fitted Parameters without noise:[  5.12 100.  ]
 
-Logloss: nan
+Deviation: 7.169050866329021
