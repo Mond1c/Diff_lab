@@ -25,6 +25,9 @@ README_STANDARD = """
 with open("README.md", "w") as file:
     file.write(README_STANDARD)
 
+def logloss(true_a, true_b, predict_a, predict_b, eps=1e-15):
+    return -0.5 * ((true_a * np.log(predict_a) + (1 - true_a) * np.log(1 - predict_a)) + (true_b * np.log(predict_b) + (1 - true_b) * np.log(1 - predict_b)))
+
 def differential_eqn(y, t, a, b):
     dydt = a * y + b
     return dydt
@@ -48,6 +51,8 @@ def generate(t_simulated, true_parameters, visible_points_count, output_png, tes
     print("True Parameters:", true_parameters)
     print("Fitted Parameters with noise:", params_with_noise)
     print("Fitted Parameters without noise:", params_without_noise)
+    loss = logloss(true_parameters[0], true_parameters[1], params_with_noise[0], params_with_noise[1])
+    print("Logloss: ", loss)
     t_more_points = np.linspace(start_range, end_range, visible_points_count)
     t_more_points2 = np.linspace(start_range, end_range, 100)
     y1 = odeint(differential_eqn, y0=1.0, t=t_more_points, args=tuple(params_without_noise)).flatten()
@@ -76,7 +81,8 @@ Output:
         file.write(start_output)
         file.write("True parameters: " + str(true_parameters) + "\n\n")
         file.write("Fitted Parameters with noise: " + str(params_with_noise) + "\n\n")
-        file.write("Fitted Parameters without noise:" + str(params_without_noise) + "\n")
+        file.write("Fitted Parameters without noise:" + str(params_without_noise) + "\n\n")
+        file.write("Logloss: " + str(loss) + "\n")
 
 # Входные данные
 visible_points_count = 20
