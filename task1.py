@@ -26,8 +26,11 @@ README_STANDARD = """
 with open("README.md", "w") as file:
     file.write(README_STANDARD)
 
-def deviation(true_a, true_b, predict_a, predict_b, eps=1e-15):
-    return math.sqrt(0.5 * ((true_a - predict_a) ** 2 + (true_b - predict_b) ** 2))
+
+def r_squared(true_parameters, predict_parameters):
+    y_mean = 0.5 * (true_parameters + predict_parameters)
+    return 1 - ((true_parameters[0] - predict_parameters[1]) ** 2 + (true_parameters[1] - predict_parameters[1]) ** 2) / ((true_parameters[0] - y_mean) ** 2 + (true_parameters[1] - y_mean))
+
 
 def differential_eqn(y, t, a, b):
     dydt = a * y + b
@@ -52,8 +55,8 @@ def generate(t_simulated, true_parameters, visible_points_count, output_png, tes
     print("True Parameters:", true_parameters)
     print("Fitted Parameters with noise:", params_with_noise)
     print("Fitted Parameters without noise:", params_without_noise)
-    loss = deviation(true_parameters[0], true_parameters[1], params_with_noise[0], params_with_noise[1])
-    print("Deviation: ", loss)
+    loss = r_squared(true_parameters[0], true_parameters[1], params_with_noise[0], params_with_noise[1])
+    print("R squared: ", loss)
     t_more_points = np.linspace(start_range, end_range, visible_points_count)
     t_more_points2 = np.linspace(start_range, end_range, 100)
     y1 = odeint(differential_eqn, y0=1.0, t=t_more_points, args=tuple(params_without_noise)).flatten()
@@ -83,7 +86,7 @@ Output:
         file.write("True parameters: " + str(true_parameters) + "\n\n")
         file.write("Fitted Parameters with noise: " + str(params_with_noise) + "\n\n")
         file.write("Fitted Parameters without noise:" + str(params_without_noise) + "\n\n")
-        file.write("Deviation: " + str(loss) + "\n")
+        file.write("R squared: " + str(loss) + "\n")
 
 # Входные данные
 visible_points_count = 20
